@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import usePlacesAutocomplete, { getDetails } from "use-places-autocomplete";
+import usePlacesAutocomplete, { getDetails } from 'use-places-autocomplete'
 
 const ListItem = ({ value, onClick }) => (
   <li data-testid="autocompleteListItem" onClick={onClick}>
@@ -67,12 +67,10 @@ export const AddressSuggestion = ({
 
     getDetails(parameter)
       .then((details) => {
-        console.log('log', details);
         
         if (typeof details !== 'string') {
-
           const geoData = {
-            formattedAddress: details.formatted_address,
+            fullAddress: details.formatted_address,
             lat: String(details.geometry.location.lat()),
             long: String(details.geometry.location.lng())
           }
