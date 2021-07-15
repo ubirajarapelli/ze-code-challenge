@@ -1,28 +1,18 @@
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { AddressSuggestion } from './components/AddressSuggestion'
-import { CATEGORIES } from './services'
+import React, { Suspense } from 'react'
+import { ApolloProvider } from '@apollo/client'
+import { AddressContextProvider } from './store'
+import { client } from './services'
+import AppRoutes from './containers/AppRoutes'
 
-function App() {
-  const [fieldValue, setFieldValue] = useState()
-
-  const { loading, error, data } = useQuery(CATEGORIES);
-  
-  console.log(loading, error, data)
-
+const App = () => {
   return (
-    <div>
-      <AddressSuggestion
-        label="cityOfBirth.label"
-        name="cityOfBirth"
-        id="cityOfBirth"
-        value={fieldValue}
-        placeholder="Escolha a cidade"
-        handleChange={(city) => {
-          setFieldValue(city);
-        }}
-      />
-    </div>
+    <Suspense fallback={<></>}>
+      <AddressContextProvider>
+        <ApolloProvider client={client}>
+          <AppRoutes />
+        </ApolloProvider>
+      </AddressContextProvider>
+    </Suspense>
   );
 }
-export default App;
+export default App
