@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { AddressContext } from '../../store'
 import { POC_SEARCH } from '../../services'
+import { PocLoaderElement } from './style'
 
 export const PocLoader = () => {
   const history = useHistory();
@@ -28,7 +29,8 @@ export const PocLoader = () => {
     
       if(!data.pocSearch.length) {
         console.log('Entrou aqui?');
-        // console.log('aqui', data.pocSearch.length)
+        alert('deu ruim')
+        // console.log('aqui', data.pocSearch.length)''
         return redirectToProducts()
       }
 
@@ -41,10 +43,18 @@ export const PocLoader = () => {
   }, [data])
 
   if(loading) {
-    return <div>Carregando</div>
+    return (
+      <PocLoaderElement 
+        role="dialog"
+        aria-labelledby="Buscando o fornecedor mais próximo a você"
+        aria-modal="true"
+      >
+        Estamos buscando o fornecedor mais próximo a você.
+      </PocLoaderElement>
+    )
   }
-  
-  return <div>Achamos um distribuidor perto de você</div>
+
+  return <></>
 
 
 }
