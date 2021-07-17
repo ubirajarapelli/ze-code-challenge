@@ -3,24 +3,31 @@ import { useHistory } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { AddressContext } from '../../store'
 import { ALL_PRODUCTS } from '../../services'
-
-import { CategoryFilter } from '../../components'
+import { CategoryFilter, ProductCard, ProductsTemplate } from '../../components'
+import { ProductsElement } from './style'
 
 const Products = () => {
   const history = useHistory();
   const { state } = useContext(AddressContext)
   const { fullAddress, id, status } = state;
 
-  console.log(state);
-
+  const [ pocId, setPocId ] = useState(null)
   const [ hasStatus, setHasStatus ] = useState('idle')
 
   useLayoutEffect(() => {
-    console.log(id);
+    
+    const sessionId = window.sessionStorage.getItem('pocID')
+
+    if(sessionId) {
+      console.log(sessionId);
+      setPocId(sessionId)
+      return
+    }
+
     if(id === null) {
       history.push('/')
     }
-  }, [id])
+  }, [pocId])
 
   useEffect(() => {
     if(status === 'CLOSED') {
@@ -29,7 +36,7 @@ const Products = () => {
   }, [status])
 
   const variables = {
-      id,
+      id: pocId,
       search: '',
       categoryId: null
     }
@@ -51,21 +58,20 @@ const Products = () => {
   }
 
   return (
-    <>
+    <ProductsTemplate address={fullAddress}>
       <CategoryFilter />
-      <div>{fullAddress}</div>
-      <div>
-        <h2>Products</h2>
-        <div>
-          {data && data.pocs.products.map(({ id, title, images }) => (
-            <div key={id} className="card">
-              <img src={images[0].url} alt={title} />
-              <p>{title}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
+      <ProductsElement>
+        {data && data.pocs.products.map(({ id, title, images, productVariants }) => (
+          <ProductCard 
+            key={id}
+            productImage={images[0].url}
+            altText={title}
+            productText={title}
+            productPrice={productVariants[0].price}
+          />
+        ))}
+      </ProductsElement>
+    </ProductsTemplate>
   )
 }
 
