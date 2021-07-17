@@ -1,5 +1,19 @@
 import React from 'react'
+import { CgShoppingBag } from 'react-icons/cg'
+import { HeaderElement, SignInButton, ShopBasketButton } from './style'
+import BrewliveryLogo from '../../assets/brewlivery.svg'
 
-export const Header = () => {
-  return <header></header>
+export const Header = ({ address = null }) => {
+  return ( 
+    <HeaderElement>
+      <nav>
+        <img src={BrewliveryLogo} alt="Logotipo Brewlivery" />
+        <address>{address}</address>
+        <SignInButton>Login</SignInButton>
+        <ShopBasketButton aria-label="Ir para a sacola de compras">
+          <CgShoppingBag />
+        </ShopBasketButton>
+      </nav>
+    </HeaderElement>
+  )
 }
