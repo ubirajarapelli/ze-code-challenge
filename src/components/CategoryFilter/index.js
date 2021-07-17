@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/client'
 import { CATEGORIES } from '../../services'
+import { CategoryFilterElement, FilterCheckButton } from './style'
 
 export const CategoryFilter = () => {
 
@@ -9,15 +10,19 @@ export const CategoryFilter = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
+  const handleChange = (id) => {
+    console.log(id);
+  }
   
   return (
-    <>
+    <CategoryFilterElement>
       {data.allCategory.map(({__typename, id, title}) =>(
-        <div key={id}>
+        <FilterCheckButton key={id}>
           <label htmlFor={title}>{title}</label>
-          <input type="checkbox" name={__typename} id={title} />
-        </div>
+          <input type="radio" name={__typename} id={title} onChange={() => handleChange(id)} />
+        </FilterCheckButton>
       ))}
-    </>
+    </CategoryFilterElement>
   )
 }
