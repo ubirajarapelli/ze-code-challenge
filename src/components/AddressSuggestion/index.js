@@ -1,26 +1,25 @@
 import React, { useRef } from 'react'
 import usePlacesAutocomplete, { getDetails } from 'use-places-autocomplete'
+import { AddressSuggestionElement, AddressSuggestionListElement, AddressSuggestionListItemElement } from './style'
 
 const ListItem = ({ value, onClick }) => (
-  <li data-testid="autocompleteListItem" onClick={onClick}>
+  <AddressSuggestionListItemElement data-testid="autocompleteListItem" onClick={onClick}>
     {value}
-  </li>
+  </AddressSuggestionListItemElement>
 );
 
 const SuggestionsList = ({ suggestions, onSuggestionClick }) => {
   if (suggestions) {
     return (
-      <>
-        <ul data-testid="autocompleteList">
-          {suggestions.map((suggestion) => (
-            <ListItem
-              key={suggestion.place_id}
-              value={suggestion.description}
-              onClick={() => onSuggestionClick(suggestion)}
-            />
-          ))}
-        </ul>
-      </>
+      <AddressSuggestionListElement data-testid="autocompleteList">
+        {suggestions.map((suggestion) => (
+          <ListItem
+            key={suggestion.place_id}
+            value={suggestion.description}
+            onClick={() => onSuggestionClick(suggestion)}
+          />
+        ))}
+      </AddressSuggestionListElement>
     );
   }
 
@@ -86,7 +85,7 @@ export const AddressSuggestion = ({
   };
 
   return (
-    <>
+    <AddressSuggestionElement>
       <label htmlFor={id}>{label}</label>
       <input
         ref={autoCompleteRef}
@@ -99,6 +98,6 @@ export const AddressSuggestion = ({
         onChange={handleInputChange}
       />
       {status === 'OK' && <SuggestionsList suggestions={data} onSuggestionClick={handleSuggestionClick} />}
-  </>
+  </AddressSuggestionElement>
   )
 }
