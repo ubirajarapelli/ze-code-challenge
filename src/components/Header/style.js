@@ -11,7 +11,7 @@ export const HeaderElement = styled.header`
 
   & nav {
     display: grid;
-    grid-template-columns: auto 10% 10% 7%;
+    grid-template-columns: auto 20% 10% 7%;
     align-items: center;
   }
 
@@ -36,13 +36,24 @@ export const HeaderButton = styled.button`
   transition: var(--link-transition);
 `
 
-// export const SignInButton = styled(HeaderButton)`
-//   font-weight: 600;
-//   background-color: transparent;
-//   &:hover{
-//     background-color: var(--lightest);
-//   }
-// `
+export const Address = styled.address`
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: 'Roboto Condensed';
+
+  &::before {
+    content: 'Receba agora em:';
+    display: block;
+    text-align: left;
+    letter-spacing: 1px;
+    font-family: 'Oswald';
+    font-weight: 600;
+    color: var(--brand-secondary);
+  }
+`
 export const SignInButton = styled(HeaderButton)`
   font-weight: 500;
   background-color: var(--brand-primary-dark);

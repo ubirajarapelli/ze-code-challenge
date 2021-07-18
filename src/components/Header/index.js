@@ -1,6 +1,6 @@
 import React from 'react'
 import { CgShoppingBag } from 'react-icons/cg'
-import { HeaderElement, SignInButton, ShopBasketButton } from './style'
+import { HeaderElement, Address, SignInButton, ShopBasketButton } from './style'
 import BrewliveryLogo from '../../assets/brewlivery.svg'
 
 export const Header = ({ address = null }) => {
@@ -8,7 +8,7 @@ export const Header = ({ address = null }) => {
     <HeaderElement>
       <nav>
         <img src={BrewliveryLogo} alt="Logotipo Brewlivery" />
-        <address>{address}</address>
+        <Address>{address}</Address>
         <SignInButton>Login</SignInButton>
         <ShopBasketButton aria-label="Ir para a sacola de compras">
           <CgShoppingBag />
