@@ -1,3 +1,4 @@
+export * from './AddToCart'
 export * from './AddressSuggestion'
 export * from './CategoryFilter'
 export * from './Container'
