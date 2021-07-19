@@ -5,7 +5,8 @@ module.exports = {
     "^.+\\.(j|t)sx?$": "babel-jest",
   },
   moduleNameMapper: {
-    "\\.(css)$": "identity-obj-proxy"
+    "\\.(css)$": "identity-obj-proxy",
+    "\\.(svg|png)$": "jest-svg-transformer"
   },
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
 };
