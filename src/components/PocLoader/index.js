@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { AddressContext } from '../../store'
 import { POC_SEARCH } from '../../services'
+import { Loader } from '../Loader'
 import { PocLoaderElement } from './style'
 
 export const PocLoader = () => {
@@ -44,13 +45,9 @@ export const PocLoader = () => {
 
   if(loading) {
     return (
-      <PocLoaderElement 
-        role="dialog"
-        aria-labelledby="Buscando o fornecedor mais próximo a você"
-        aria-modal="true"
-      >
-        Estamos buscando o fornecedor mais próximo a você.
-      </PocLoaderElement>
+      <Loader 
+        message="Estamos buscando o fornecedor mais próximo a você."
+      />
     )
   }
 
