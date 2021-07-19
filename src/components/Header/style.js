@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const HeaderElement = styled.header`
   position: fixed;
   width: 100%;
+  border-bottom: 1px solid var(--brand-primary-dark);
   background-color: rgba(255, 255, 255, .6);
 
   & img {
@@ -13,15 +14,6 @@ export const HeaderElement = styled.header`
     display: grid;
     grid-template-columns: auto 20% 10% 7%;
     align-items: center;
-  }
-
-  & button {
-    &:first-child {
-      
-    }
-    &:last-child {
-      
-    }
   }
 `;
 
@@ -47,13 +39,14 @@ export const Address = styled.address`
   &::before {
     content: 'Receba agora em:';
     display: block;
-    text-align: left;
+    padding-right: .8em;
     letter-spacing: 1px;
     font-family: 'Oswald';
     font-weight: 600;
     color: var(--brand-secondary);
   }
 `
+
 export const SignInButton = styled(HeaderButton)`
   font-weight: 500;
   background-color: var(--brand-primary-dark);
@@ -62,6 +55,7 @@ export const SignInButton = styled(HeaderButton)`
     background-color: #c96903;
   }
 `
+
 export const ShopBasketButton = styled(HeaderButton)`
   background-color: var(--lightest);
   color: var(--text-dark);

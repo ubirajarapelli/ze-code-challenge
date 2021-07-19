@@ -8,7 +8,7 @@ export const Header = ({ address = null }) => {
     <HeaderElement>
       <nav>
         <img src={BrewliveryLogo} alt="Logotipo Brewlivery" />
-        <Address>{address}</Address>
+        { address ? <Address>{address}</Address> : <span></span>}
         <SignInButton>Login</SignInButton>
         <ShopBasketButton aria-label="Ir para a sacola de compras">
           <CgShoppingBag />
