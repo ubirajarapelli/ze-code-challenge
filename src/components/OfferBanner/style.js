@@ -9,3 +9,9 @@ export const OfferBannerElement = styled.div`
     width: 75%;
   }
 `
+
+export const OfferBannerCaption = styled.figcaption`
+  width: 80%;
+  background-color: antiquewhite;
+  transform: rotate(-16deg) translateY(-440%) translateX(30%);
+`

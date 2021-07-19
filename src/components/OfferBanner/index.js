@@ -1,11 +1,14 @@
 import React from 'react'
-import { OfferBannerElement } from './style'
+import { OfferBannerElement, OfferBannerCaption } from './style'
 import BannerImage from '../../assets/pngfind.com-cerveja-png-5703694.png'
 
 export const OfferBanner = () => {
   return (
     <OfferBannerElement>
-      <img src={BannerImage} alt="" />
+      <figure>
+        <img src={BannerImage} alt="" />
+        <OfferBannerCaption>Microcervejarias especiais<br /> com até 50% OFF</OfferBannerCaption>
+      </figure>
     </OfferBannerElement>
   )
 }
