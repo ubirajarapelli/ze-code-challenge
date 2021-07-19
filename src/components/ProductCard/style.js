@@ -5,7 +5,6 @@ export const ProductCardElement = styled.div`
   display: flex;
   flex-direction: column;
   width: 260px;
-  margin-top: 2em;
   margin-bottom: 2em;
   padding: 1em;
   border: 1px solid var(--brand-primary-light);
@@ -14,6 +13,10 @@ export const ProductCardElement = styled.div`
   &:hover {
     box-shadow: 0 0 15px rgba(52, 36, 12, .3);
     background-color: var(--brand-primary-light);
+  }
+
+  & + & {
+    margin-top: 1em;
   }
 `
 export const ProductCardImage = styled.img`
