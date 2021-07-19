@@ -1,26 +1,36 @@
-import React from 'react'
-import { useQuery } from '@apollo/client'
-import { CATEGORIES } from '../../services'
-import { CategoryFilterElement, FilterCheckButton } from './style'
+import React, { useState } from 'react'
+import { CategoryFilterElement, FilterCheckButton, Skeleton } from './style'
 
-export const CategoryFilter = () => {
+export const CategoryFilter = ({ categories, onChange }) => {
+  const [ radioCheked, setRadioCheked ] = useState()
 
-  const { loading, error, data } = useQuery(CATEGORIES)
-
-  if (loading) {
-    return <div>Loading...</div>;
+  if (categories === undefined) {
+    return <Skeleton>Loading...</Skeleton>;
   }
 
-  const handleChange = (id) => {
-    console.log(id);
+  const handleChange = radioHandler => (event) => {
+    const { id } = event.target
+    setRadioCheked(id)
+
+    if (radioHandler === undefined) {
+      return
+    }
+    return radioHandler(event)
   }
   
   return (
     <CategoryFilterElement>
-      {data.allCategory.map(({__typename, id, title}) =>(
+      {categories.map(({__typename, id, title}) =>(
         <FilterCheckButton key={id}>
+          <input 
+            type="radio" 
+            name={__typename} 
+            id={title} 
+            value={id}
+            onChange={handleChange(onChange)} 
+            checked={radioCheked === title} 
+          />
           <label htmlFor={title}>{title}</label>
-          <input type="radio" name={__typename} id={title} onChange={() => handleChange(id)} />
         </FilterCheckButton>
       ))}
     </CategoryFilterElement>
