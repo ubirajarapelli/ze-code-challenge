@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test from App Component should mount App Component 1`] = `
+exports[`Test from HomeTemplate Component should make a snapshot from HomeTemplate Component 1`] = `
 <div>
   <header
     class="sc-dIsUp bvmyLd"
@@ -39,36 +39,12 @@ exports[`Test from App Component should mount App Component 1`] = `
     </nav>
   </header>
   <div
-    class="sc-cxNHIi coauSe"
+    class="sc-lmgQwP ecFlmz"
   >
     <main>
-      <div
-        class="sc-iJCRrE dFNHNJ"
-      >
-        <h1>
-          <strong>
-            Cervejas e Petiscos
-          </strong>
-          <br />
-          entregue na sua porta
-        </h1>
-        <div
-          class="sc-gKAaRy heDLRw"
-        >
-          <label
-            for="address"
-          >
-            Digite seu endereço
-          </label>
-          <input
-            id="address"
-            name="address"
-            placeholder="Digite o endereço com número"
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
+      <h1>
+        Home Template
+      </h1>
     </main>
     <section>
       <div
