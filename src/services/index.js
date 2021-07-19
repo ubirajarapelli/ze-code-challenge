@@ -31,6 +31,10 @@ export const ALL_PRODUCTS = gql`
         }
       }
     }
+    allCategory{
+      title
+      id
+    }
   }
 `
 
