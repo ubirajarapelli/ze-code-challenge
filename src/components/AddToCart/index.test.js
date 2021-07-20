@@ -66,22 +66,23 @@ describe('Test from AddToCart Component', () => {
     expect(addButton).not.toBeInTheDocument()
   })
 
-  it('Should show Add button when a click on Remove button', () => {
+  it('Should show Add button when a click on Remove button', async () => {
     renderComponent();
     const quantity = screen.getByRole('textbox')
-    const addButton = screen.getAllByRole('button', { name: /adicionar/i })[1]
+    const addButton = screen.getByRole('button', { name: 'Adicionar' })
     
     userEvent.click(addButton)
 
-    const removeButton = screen.getAllByRole('button', { name: /remover/i })[0]
+    const removeButton = screen.getByRole('button', { name: 'Remover' })
     expect(removeButton).toBeInTheDocument()
     expect(addButton).not.toBeInTheDocument()
 
-    userEvent.click(removeButton)
+    await userEvent.click(removeButton)
 
+    const showAddButton = screen.getByRole('button', { name: 'Adicionar' })
+    
     expect(quantity).toHaveAttribute('value', '1')
-    // expect(addButton).toBeInTheDocument()
-    // expect(removeButton).not.toBeInTheDocument()
+    expect(removeButton).not.toBeInTheDocument()
+    expect(showAddButton).toBeInTheDocument()
   })
-
 })

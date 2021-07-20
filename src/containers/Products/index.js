@@ -18,7 +18,7 @@ const Products = () => {
   useLayoutEffect(() => {
     const sessionId = window.sessionStorage.getItem('pocID')
 
-    console.log(sessionId);
+    // console.log(sessionId);
     if(sessionId) {
       setPocId(sessionId)
       return

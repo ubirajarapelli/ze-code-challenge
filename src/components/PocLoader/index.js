@@ -29,7 +29,7 @@ export const PocLoader = () => {
 
     
       if(!data.pocSearch.length) {
-        console.log('Entrou aqui?');
+        // console.log('Entrou aqui?');
         alert('deu ruim')
         // console.log('aqui', data.pocSearch.length)''
         return redirectToProducts()

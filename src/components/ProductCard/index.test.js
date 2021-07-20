@@ -44,7 +44,7 @@ describe('Test from ProductCard Component', () => {
     })
 
     const cardDescription = screen.getAllByText(/Vinho Chileno Tinto Seco/i)[1]
-    const cardPrice = screen.getByText(/R\$ 54,90/i)
+    const cardPrice = screen.getByText('R$ 54.90')
 
     expect(cardText).toBeInTheDocument();
     expect(cardImage).toBeInTheDocument();
