@@ -4,6 +4,7 @@ export const ProductCardElement = styled.div`
   display: flex;
   flex-direction: column;
   width: 260px;
+  margin-top: 1em;
   margin-bottom: 2em;
   padding: 1em;
   border: 1px solid var(--brand-primary-light);

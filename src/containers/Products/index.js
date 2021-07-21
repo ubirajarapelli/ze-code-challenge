@@ -10,11 +10,16 @@ const Products = () => {
   const history = useHistory();
   const { state } = useContext(AddressContext)
   const { id, status } = state;
-
+  const [ notFound, setNotFound ] = useState(false)
   const [ fullAddress, setFullAddress ] = useState(null)
   const [ pocId, setPocId ] = useState(null)
   const [ categoryId, setCategoryId ] = useState(null)
   const [ hasStatus, setHasStatus ] = useState('idle')
+
+
+  const notFoudPoc = () => {
+    <Loader message="Não temos distribuidor ativo em sua região, por favor, escolha outro endereço" />
+  }
 
   useLayoutEffect(() => {
     const storageAdress = JSON.parse(localStorage.getItem('clientLocation'))

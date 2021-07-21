@@ -30,7 +30,6 @@ export const PocLoader = () => {
   useEffect(() => {
     if (data !== undefined) {
       if(!data.pocSearch.length) {
-        alert('deu ruim')
         setStorageItem(state);
         return redirectToProducts()
       }

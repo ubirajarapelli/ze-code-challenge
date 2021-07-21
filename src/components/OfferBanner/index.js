@@ -7,7 +7,7 @@ export const OfferBanner = () => {
     <OfferBannerElement>
       <figure>
         <img src={BannerImage} alt="Cerveja Tupiniquin" />
-        <OfferBannerCaption>Microcervejarias especiais<br /> com até 50% OFF</OfferBannerCaption>
+        <OfferBannerCaption><strong>Microcervejarias especiais</strong><br /> com até 50% OFF</OfferBannerCaption>
       </figure>
     </OfferBannerElement>
   )
