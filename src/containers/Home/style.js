@@ -1,11 +1,9 @@
 import styled from 'styled-components'
   
 export const HomeElement = styled.div`
-  display: grid;
-  grid-template-rows: 50% 45%;
-  grid-gap: 5%;
-  justify-content: center;
-  height: 100%;
+  
+  width: 86%;
+  margin: 0 auto;
 
   & h1 {
     align-self: end;
@@ -22,5 +20,13 @@ export const HomeElement = styled.div`
       font-size: 64px;
       color: var(--text-dark);
     }
+  }
+
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-rows: 50% 45%;
+    grid-gap: 5%;
+    justify-content: center;
+    height: 100%;
   }
 `

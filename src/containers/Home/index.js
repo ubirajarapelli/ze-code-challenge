@@ -14,8 +14,6 @@ const Home = () => {
     setState(newState)
     setHasValue(true)
   }
-
-  // const [handleChange, { loading, error, data }] = useLazyQuery(INFO_PERSON)
     
   return (
     <HomeTemplate>

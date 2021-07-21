@@ -9,24 +9,27 @@ import { ProductsElement } from './style'
 const Products = () => {
   const history = useHistory();
   const { state } = useContext(AddressContext)
-  const { fullAddress, id, status } = state;
+  const { id, status } = state;
 
+  const [ fullAddress, setFullAddress ] = useState(null)
   const [ pocId, setPocId ] = useState(null)
-  const [ hasStatus, setHasStatus ] = useState('idle')
   const [ categoryId, setCategoryId ] = useState(null)
+  const [ hasStatus, setHasStatus ] = useState('idle')
 
   useLayoutEffect(() => {
-    const sessionId = window.sessionStorage.getItem('pocID')
+    const storageAdress = JSON.parse(localStorage.getItem('clientLocation'))
 
-    // console.log(sessionId);
-    if(sessionId) {
-      setPocId(sessionId)
+    const { id, fullAddress } = storageAdress
+    if(id) {
+      setFullAddress(fullAddress)
+      setPocId(id)
       return
     }
 
     if(id === null) {
       history.push('/')
     }
+
   }, [pocId])
 
   useEffect(() => {
@@ -49,8 +52,6 @@ const Products = () => {
     variables
   })
 
-  // console.log(loading, error, data)
-
   if (hasStatus === 'active') {
     return (
       <ProductsTemplate address={fullAddress}>
@@ -63,6 +64,7 @@ const Products = () => {
 
   return (
     <ProductsTemplate address={fullAddress}>
+      
       { loading && <Loader message="Carregando produtos" /> }
       <CategoryFilter 
         categories={data?.allCategory}
@@ -73,7 +75,8 @@ const Products = () => {
       { data && !data.pocs.products.length && <div>Não tem produto</div> }
       <ProductsElement>  
         {data?.pocs.products.map(({ id, title, images, productVariants }) => (
-          <ProductCard 
+          <ProductCard
+            data-testid="product-title"
             key={id}
             productImage={images[0].url}
             productText={title}
