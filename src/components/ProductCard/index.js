@@ -14,7 +14,7 @@ export const ProductCard = ({ productImage, productText, productPrice }) => {
   }
 
   return (
-    <ProductCardElement>
+    <ProductCardElement className="card">
       <ProductCardTitle>{productTitle}</ProductCardTitle>
       <ProductCardImage src={productImage} alt={productDescription} />
       <ProductCardText>{productDescription}</ProductCardText>

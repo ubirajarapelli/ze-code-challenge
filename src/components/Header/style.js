@@ -5,17 +5,26 @@ export const HeaderElement = styled.header`
   width: 100%;
   border-bottom: 1px solid var(--brand-primary-dark);
   background-color: rgba(255, 255, 255, .6);
+`;
 
-  & img {
+export const Nav = styled.nav`
+  display: grid;
+  grid-template-columns: 25% 40% 20% 15%;
+  align-items: center;
+
+  @media (min-width: 1280px) { 
+    grid-template-columns: auto 20% 10% 7%;
+  }
+`
+
+export const LogoImage = styled.img`
+  max-width: 85%;
+  margin-left: 15%;
+
+  @media (min-width: 1280px) { 
     margin-left: 4%;
   }
-
-  & nav {
-    display: grid;
-    grid-template-columns: auto 20% 10% 7%;
-    align-items: center;
-  }
-`;
+`
 
 export const HeaderButton = styled.button`
   padding-top: 24px;
@@ -44,6 +53,10 @@ export const Address = styled.address`
     font-family: 'Oswald';
     font-weight: 600;
     color: var(--brand-secondary);
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 10%;
   }
 `
 

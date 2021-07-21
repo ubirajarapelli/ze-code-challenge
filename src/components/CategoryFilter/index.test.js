@@ -34,6 +34,7 @@ describe('Test from CategoryFilter Component', () => {
 
     const firstCategory = screen.getByRole('radio', { value: "94" })
     userEvent.click(firstCategory)
+    expect(onChangeMock).toBeCalled()
     expect(firstCategory).toBeChecked()
 
   })

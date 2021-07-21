@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export const SocialLinksElement = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100%;
-  padding-top: 128px;
+  
   list-style-type: none;
   font-size: 26px;
 
@@ -21,5 +21,11 @@ export const SocialLinksElement = styled.ul`
     &:hover {
       color: var(--text-base);
     }
+  }
+
+  @media (min-width: 1280px) {
+    padding-top: 128px;
+    flex-direction: column;
+    justify-content: center;
   }
 `

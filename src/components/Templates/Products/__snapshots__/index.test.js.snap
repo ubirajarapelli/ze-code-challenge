@@ -3,21 +3,24 @@
 exports[`Test from ProductsTemplate Component should make a snapshot from ProductsTemplate Component 1`] = `
 <div>
   <header
-    class="sc-dIsUp bvmyLd"
+    class="sc-dIsUp dPZYiy"
   >
-    <nav>
+    <nav
+      class="sc-bqGGPW gvesvb"
+    >
       <img
         alt="Logotipo Brewlivery"
+        class="sc-ksluID jPHFdz"
       />
       <span />
       <button
-        class="sc-bqGGPW sc-hBMUJo isrxgy mDayR"
+        class="sc-hBMUJo sc-fFSPTT lodoa-d cvdwmV"
       >
         Login
       </button>
       <button
         aria-label="Ir para a sacola de compras"
-        class="sc-bqGGPW sc-fnVZcZ isrxgy laRLoJ"
+        class="sc-hBMUJo sc-bkbkJK lodoa-d gpByXJ"
       >
         <svg
           fill="none"
@@ -39,7 +42,7 @@ exports[`Test from ProductsTemplate Component should make a snapshot from Produc
     </nav>
   </header>
   <main
-    class="sc-lmgQwP bHHAix"
+    class="sc-iJCRrE DPfno"
   >
     <div
       class="sc-iqAclL jjNvRh"
@@ -50,7 +53,7 @@ exports[`Test from ProductsTemplate Component should make a snapshot from Produc
     </div>
   </main>
   <footer
-    class="sc-crzoAE lfmNBV"
+    class="sc-crzoAE jHuWbY"
   >
     <div
       class="sc-iqAclL jjNvRh"

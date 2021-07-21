@@ -3,21 +3,24 @@
 exports[`Test from HomeTemplate Component should make a snapshot from HomeTemplate Component 1`] = `
 <div>
   <header
-    class="sc-dIsUp bvmyLd"
+    class="sc-dIsUp dPZYiy"
   >
-    <nav>
+    <nav
+      class="sc-bqGGPW gvesvb"
+    >
       <img
         alt="Logotipo Brewlivery"
+        class="sc-ksluID jPHFdz"
       />
       <span />
       <button
-        class="sc-bqGGPW sc-hBMUJo isrxgy mDayR"
+        class="sc-hBMUJo sc-fFSPTT lodoa-d cvdwmV"
       >
         Login
       </button>
       <button
         aria-label="Ir para a sacola de compras"
-        class="sc-bqGGPW sc-fnVZcZ isrxgy laRLoJ"
+        class="sc-hBMUJo sc-bkbkJK lodoa-d gpByXJ"
       >
         <svg
           fill="none"
@@ -39,7 +42,7 @@ exports[`Test from HomeTemplate Component should make a snapshot from HomeTempla
     </nav>
   </header>
   <div
-    class="sc-lmgQwP ecFlmz"
+    class="sc-iJCRrE gAmRDA"
   >
     <main>
       <h1>
@@ -48,14 +51,14 @@ exports[`Test from HomeTemplate Component should make a snapshot from HomeTempla
     </main>
     <section>
       <div
-        class="sc-bkbkJK gSAqTv"
+        class="sc-dIvrsQ eAkMvO"
       >
         <figure>
           <img
             alt="Cerveja Tupiniquin"
           />
           <figcaption
-            class="sc-iemWCZ jiSSzI"
+            class="sc-hHEiqL QMegq"
           >
             Microcervejarias especiais
             <br />
@@ -66,7 +69,7 @@ exports[`Test from HomeTemplate Component should make a snapshot from HomeTempla
     </section>
     <aside>
       <ul
-        class="sc-iwajpm bGMVDO"
+        class="sc-cxNHIi eAwahD"
       >
         <li>
           <a
@@ -132,7 +135,7 @@ exports[`Test from HomeTemplate Component should make a snapshot from HomeTempla
     </aside>
   </div>
   <footer
-    class="sc-crzoAE lfmNBV"
+    class="sc-crzoAE jHuWbY"
   >
     <div
       class="sc-iqAclL jjNvRh"

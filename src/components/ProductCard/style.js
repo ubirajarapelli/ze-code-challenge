@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const ProductCardElement = styled.div`
-  /* width: 256px; */
   display: flex;
   flex-direction: column;
   width: 260px;

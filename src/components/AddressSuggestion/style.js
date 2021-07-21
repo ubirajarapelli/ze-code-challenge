@@ -29,12 +29,10 @@ export const AddressSuggestionElement = styled.div`
 `
 
 export const AddressSuggestionListElement = styled.ul`
-  width: 100%;
-  max-width: 560px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  padding-bottom: 0.5em;
   list-style-type: none;
+  border-bottom-right-radius: 27px;
+  border-bottom-left-radius: 27px;
   background-color: var(--lightest);
   &::before,
   &::after {
@@ -53,17 +51,28 @@ export const AddressSuggestionListElement = styled.ul`
   &::after {
     right: 0;
   }
+
+  @media (min-width: 1280px) {
+    width: 100%;
+    max-width: 560px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `
 
 export const AddressSuggestionListItemElement = styled.li`
-  width: 100%;
-  max-width: 560px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   padding: 1em 1.7em;
   cursor: pointer;
   &:hover {
     background-color: var(--brand-primary-light);
+  }
+
+  @media (min-width: 1280px) {
+    width: 100%;
+    max-width: 560px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 `

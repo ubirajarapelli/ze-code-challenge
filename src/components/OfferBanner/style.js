@@ -6,7 +6,13 @@ export const OfferBannerElement = styled.div`
   text-align: center;
 
   & img {
-    width: 75%;
+    width: 50%;
+  }
+
+  @media (min-width: 1280px) {
+    & img {
+      width: 75%;
+    }
   }
 `
 

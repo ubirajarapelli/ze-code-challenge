@@ -1,12 +1,7 @@
 import styled from 'styled-components'
   
 export const HomeTemplateElement = styled.div`
-  /* height: calc(100vh - (6457px); */
-  /* height: calc(100vh - 122px); */
   display: grid;
-  grid-template-columns: 7% 35% auto;
-  grid-auto-flow: dense;
-  height: calc(100vh - 59px);
   overflow: hidden;
   padding-top: 66px;
   background-color: var(--brand-primary);
@@ -14,13 +9,22 @@ export const HomeTemplateElement = styled.div`
   background-repeat: no-repeat; 
   background-position: left;
 
-  & aside {
-    grid-column-start: 1;
-  }
-  & section {
-    grid-column-start: 2;
-  }
-  & main {
-    grid-column-start: 3;
+  
+
+  @media (min-width: 1280px) {
+
+    grid-template-columns: 7% 35% auto;
+    grid-auto-flow: dense;
+    height: calc(100vh - 59px);
+
+    & aside {
+      grid-column-start: 1;
+    }
+    & section {
+      grid-column-start: 2;
+    }
+    & main {
+      grid-column-start: 3;
+    }
   }
 `

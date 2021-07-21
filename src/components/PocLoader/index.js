@@ -4,7 +4,6 @@ import { useQuery } from '@apollo/client'
 import { AddressContext } from '../../store'
 import { POC_SEARCH } from '../../services'
 import { Loader } from '../Loader'
-import { PocLoaderElement } from './style'
 
 export const PocLoader = () => {
   const history = useHistory();
@@ -24,20 +23,23 @@ export const PocLoader = () => {
     history.push('/products')
   }
 
+  const setStorageItem = (adress) => {
+    localStorage.setItem('clientLocation', JSON.stringify(adress));
+  }
+
   useEffect(() => {
     if (data !== undefined) {
-
-    
       if(!data.pocSearch.length) {
-        // console.log('Entrou aqui?');
         alert('deu ruim')
-        // console.log('aqui', data.pocSearch.length)''
+        setStorageItem(state);
         return redirectToProducts()
       }
 
       const { id, status } = data.pocSearch[0]
-      const updateState = Object.assign(state, {id, status})
+      const updateState = Object.assign(state, { id, status })
+
       setState(updateState)
+      setStorageItem(updateState)
       redirectToProducts()
     }
   
@@ -52,6 +54,4 @@ export const PocLoader = () => {
   }
 
   return <></>
-
-
 }

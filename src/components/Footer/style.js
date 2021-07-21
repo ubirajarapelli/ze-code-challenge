@@ -7,9 +7,10 @@ export const FooterElement = styled.footer`
   font-size: 14px;
   background-color: var(--brand-primary-light);
 
+  
   & div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 1.5em;
     align-items: center;
     text-align: center;
   }
@@ -17,13 +18,21 @@ export const FooterElement = styled.footer`
   & p {
     color: var(--text-darkest);
     font-family: 'Roboto Condensed';
-    font-weight: 300;
+    font-weight: 300;   
+  }
 
-    &:first-child {
-      text-align: left;
+  @media (min-width: 1280px) {
+    & div {
+      grid-template-columns: 1fr 1fr 1fr;
     }
-    &:last-child {
-      text-align: right;
+
+    & p {
+        &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
     }
   }
 `
