@@ -9,7 +9,6 @@ const addressParams = {
   long: null,
   now: new Date()
 }
-// now: "2017-08-01T20:00:00.000Z"
 
 export const AddressContext = createContext(addressParams)
 

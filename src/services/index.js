@@ -6,12 +6,12 @@ import {
   gql
 } from '@apollo/client';
 
-// const httpLink = new HttpLink({
-//   uri: 'https://api.code-challenge.ze.delivery/public/graphql'
-// })
+const httpLink = new HttpLink({
+  uri: 'https://api.code-challenge.ze.delivery/public/graphql'
+})
 
 export const client = new ApolloClient({
-  uri: 'https://api.code-challenge.ze.delivery/public/graphql',
+  link: httpLink,
   cache: new InMemoryCache(),
 });
 
@@ -37,14 +37,6 @@ export const ALL_PRODUCTS = gql`
     }
   }
 `
-
-export const CATEGORIES = gql`
-query allCategoriesSearch {
-  allCategory{
-    title
-    id
-  }
-}`;
 
 
 export const POC_PRODUCTS_LIST = gql`
